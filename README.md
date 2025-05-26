@@ -1,54 +1,92 @@
-# 📌 Doubly Linked List Library (`clsDoublyLinkedList`) ⚡
+# 📌 clsDoublyLinkedList – C++ Template-Based Doubly Linked List
 
-A C++ template-based **doubly linked list** that supports essential operations like insertion, deletion, and traversal in both forward and backward directions. 🚀
+A versatile and efficient generic doubly linked list implementation in C++. This library supports essential list operations such as insertion, deletion, searching, and bidirectional traversal using C++ templates for flexibility with any data type. 🚀
 
 ---
 
 ## 🌟 Project Overview
 
-This library implements a generic doubly linked list using C++ templates. Each node contains:
+`clsDoublyLinkedList` is a doubly linked list class in C++ that manages nodes linked in both forward and backward directions. It allows dynamic data management with these key features:
 
-- `Data`: the value of any type `T`
-- `Next`: pointer to the next node
-- `Prev`: pointer to the previous node
+- 🔄 Insert nodes at the beginning, end, or after a specific value  
+- ❌ Delete nodes by value, first node, or last node  
+- 🔍 Search nodes by value  
+- ↔️ Traverse the list forward and backward  
+- 🖨️ Print detailed node info or list content  
+- ♻️ Automatic cleanup of allocated memory in the destructor  
 
-Supported operations include:
-
-✅ Inserting nodes at the beginning, end, or after a specific value  
-✅ Deleting the first, last, or a specific node  
-✅ Searching for nodes by value  
-✅ Printing the list in different formats  
-✅ Auto memory cleanup on destruction
+This template class is type-agnostic, allowing storage of any data type.
 
 ---
 
 ## ✨ Features
 
 ### 🔹 Insertion Operations
-- `InsertAtBeginning(T Value)` — Add node at the front
-- `InsertAtEnd(T Value)` — Add node at the end
-- `InsertAfter(T ValuePrev, T Value)` — Insert after a node with a specific value
+- `InsertAtBeginning(Value)`: Insert a node at the start of the list.  
+- `InsertAtEnd(Value)`: Insert a node at the end of the list.  
+- `InsertAfter(ValuePrev, Value)`: Insert a node after a node containing `ValuePrev`.  
 
 ### 🔹 Deletion Operations
-- `DeleteNode(T Value)` — Delete node with a specific value
-- `DeleteFirstNode()` — Delete the first node
-- `DeleteLastNode()` — Delete the last node
+- `DeleteNode(Value)`: Delete the node containing the specified value.  
+- `DeleteFirstNode()`: Remove the first node in the list.  
+- `DeleteLastNode()`: Remove the last node in the list.  
 
-### 🔹 Display & Traversal
-- `PrintList()` — Show all elements: `NULL <--> val1 <--> val2 <--> ... <--> NULL`
-- `PrintListDetails()` — Show each node with its previous and next values
-- `PrintElementWithoutDetails()` — Print only data values
+### 🔹 Searching & Traversal
+- `Find(Node*, Value)`: Internal function to find a node by value.  
+- `PrintNodeDetails(Node*)`: Print detailed info of a node including its neighbors.  
+- `PrintListDetails()`: Print all nodes with detailed info.  
+- `PrintList()`: Print the list showing forward links visually.  
 
-### 🔹 Search
-- `Find(Node* Start, T Value)` — Private method to locate a node with the given value
+### 🔹 Memory Management
+- The destructor frees all allocated nodes automatically to prevent memory leaks.
 
 ---
 
 ## 🚀 How It Works
 
-- Nodes are dynamically allocated and linked in both directions (Prev and Next).
-- Insertions/deletions update adjacent node pointers automatically.
-- `PrintNodeDetails(Node* Current)` is a helper function to show surrounding node values.
+- **Insertion & Deletion**: Nodes can be dynamically added or removed at various positions while maintaining the integrity of forward and backward links.  
+- **Searching & Access**: Nodes are located via value, enabling targeted insertions or deletions.  
+- **Traversal & Printing**: The list can be traversed and printed in detail, showing links to previous and next nodes.  
+- **Memory Safety**: Proper dynamic allocation and deletion prevent memory leaks.
 
 ---
 
+## ⚙️ Technologies Used
+
+- **Language**: C++  
+- **Templates**: Enable generic programming for any data type  
+- **Pointers**: Manage dynamic nodes linked in both directions  
+- **Doubly Linked List**: Supports bidirectional traversal for efficient operations  
+
+---
+
+## 🎯 Learning Outcomes
+
+This project helps you understand:
+
+- ✅ Dynamic memory allocation and pointer manipulation in C++  
+- ✅ Linked list operations including insertion, deletion, searching, and bidirectional traversal  
+- ✅ Template programming for type-agnostic data structures  
+- ✅ Implementing complex data structures from scratch for educational purposes
+
+---
+
+## 📜 License
+
+This project is open-source! Feel free to use, modify, and enhance it in your own projects. 🚀
+
+---
+
+## 🤝 Contributing
+
+Contributions and improvements are welcome! Please open an issue or submit a pull request with your ideas.
+
+---
+
+## 🏁 Getting Started
+
+1. Download or clone the repository.  
+2. Include `clsDoublyLinkedList.h` in your C++ project.  
+3. Compile your code with a standard C++ compiler:  
+   ```bash
+   g++ main.cpp -o output
