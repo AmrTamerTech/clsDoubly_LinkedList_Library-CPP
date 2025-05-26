@@ -52,5 +52,3 @@ Supported operations include:
 
 ---
 
-## 📁 File Structure
-
